@@ -49,15 +49,6 @@ object Global extends GlobalSettings {
 
     super.onStop(app)
   }
-
-  /**
-   * Controllers must be resolved through the application context. There is a special method of GlobalSettings
-   * that we can override to resolve a given controller. This resolution is required by the Play router.
-   * @param controllerClass
-   * @tparam A
-   * @return
-   */
-  override def getControllerInstance[A](controllerClass: Class[A]): A = ctx.getBean(controllerClass)
 }
 @Configuration
 @EnableJpaRepositories(Array("models"))
